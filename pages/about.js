@@ -15,13 +15,13 @@ export function Slider ({step, setFormStep}) {
 }
 
 export function InfoBlock({step, nextFormStep}) {
-    const Page0 = <p className='my-auto text-lg font-extralight mb-5'>
+    const Page0 = <p className='my-auto text-lg font-extralight'>
         Ничто не мотивирует соблюдать правила как деньги. Нет, мы не заплатим тебе, но величайшая награда — это отказаться от вредной привычки.
     </p>
-    const Page1 = <p className='my-auto text-lg font-extralight mb-5'>
+    const Page1 = <p className='my-auto text-lg font-extralight'>
         Исследования журнала New England Journal of Medicine показали, что более половины людей (52%), которые поспорили на деньги, бросили курить как минимум на 6 месяцев.
     </p>
-    const Page2 = <div className='my-auto text-lg font-extralight mb-5'>
+    const Page2 = <div className='my-auto text-lg font-extralight'>
         Мы предлагаем тебе отложить сумму, которую не захочешь потерять (5000 рублей).
         <ol className="list-decimal list-inside">
             <li>Расскажи друзьям, что хочешь отказаться от вредной привычки, поделившись ссылкой.</li>
@@ -29,7 +29,7 @@ export function InfoBlock({step, nextFormStep}) {
             <li>Проиграв битву над самим собой, отложенную сумму нужно будет потратить на благотворительность.</li>
         </ol>
     </div>
-    const Page3 = <p className='my-auto text-lg font-extralight mb-5'>
+    const Page3 = <p className='my-auto text-lg font-extralight'>
     Не веришь, что эта «игра» поможет достигнуть заветной цели? А ты проверь и быстро втянешься в процесс. Потеряв однажды круглую сумму, вряд ли ты захочешь сделать это снова. К тому же, будет очень стыдно перед друзьями, когда они застукают тебя за нарушением.
 </p>
     const textBase = {
@@ -44,7 +44,7 @@ export function InfoBlock({step, nextFormStep}) {
                 <Link onClick={nextFormStep} href='#' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4'>
                     Далее
                 </Link> :
-                <Link href='#' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4'>
+                <Link href='/create' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4'>
                     Создать аскезу
                 </Link>
                 }
@@ -56,12 +56,14 @@ export default function About() {
     const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 
   return (
-    <div className='flex flex-col min-safe-h-screen mx-7 justify-between'>
-        <Slider step={formStep} setFormStep={setFormStep}/>
-        <div className='flex flex-col bg-white rounded-xl p-5 mb-20'>
-            <InfoBlock step={formStep} nextFormStep={nextFormStep}/>
+    <main  className='bg-black-background'>
+        <div className='flex flex-col min-safe-h-screen mx-7 justify-between'>
+            <Slider step={formStep} setFormStep={setFormStep}/>
+            <div className='flex flex-col bg-white rounded-xl h-2/3 p-5 mb-20'>
+                <InfoBlock step={formStep} nextFormStep={nextFormStep}/>
+            </div>
         </div>
-    </div>
+    </main>
     
   )
 }
