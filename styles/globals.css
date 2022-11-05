@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.min-safe-h-screen {
+html, body, .min-safe-h-screen {
   /* equivalent to 100dvh in major browsers */
   height: calc(
     100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
@@ -10,7 +10,7 @@
 }
 
 @supports (-webkit-touch-callout: none) {
-  .min-safe-h-screen {
+html, body,  .min-safe-h-screen {
     height: 100%;
     height: -moz-available;          
     height: -webkit-fill-available;  
