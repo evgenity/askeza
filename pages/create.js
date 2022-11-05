@@ -20,7 +20,7 @@ export function PageName ({ formData, setFormData }) {
         name: e.target.value,
       });
     return (
-         <div className='flex flex-col my-auto text-lg mt-[30%] '>
+         <div className='flex flex-col my-auto text-lg'>
             <label className="mb-2">Имя</label>
             <input className="py-2 border-b border-gray-500 text-xl" onChange={handlechange} value={formData.name}></input>
         </div>
@@ -33,7 +33,7 @@ export function PageEmail ({ formData, setFormData }) {
         email: e.target.value,
       });
     return (
-         <div className='flex flex-col my-auto text-lg mt-[30%] '>
+         <div className='flex flex-col my-auto text-lg '>
             <label className="mb-2">Электронная почта</label>
             <input className="py-2 border-b border-gray-500 text-xl" onChange={handlechange} value={formData.email}></input>
         </div>
@@ -50,7 +50,7 @@ export function PageAskeza ({ formData, setFormData }) {
         askeza: false,
       })}
     return (
-         <div className='flex flex-col my-auto text-lg mt-[30%] w-full justify-between'>
+         <div className='flex flex-col my-auto text-lg w-full justify-between'>
             <label className="mb-2">Хочу отказаться от</label>
             <div className="flex flex-row">
                 <div onClick={askezaChoiceSmoke} className={"flex flex-col w-full rounded-xl m-1 py-16 " + (formData.askeza ? ' bg-violet-background text-white' : ' bg-gray-200 text-gray-900') }>
@@ -76,7 +76,7 @@ export function PageDays ({ formData, setFormData }) {
         days: 100,
       })}
     return (
-         <div className='flex flex-col my-auto text-lg mt-[30%] w-full justify-between'>
+         <div className='flex flex-col my-auto text-lg w-full justify-between'>
             <label className="mb-2">На сколько дней?</label>
             <div className="flex flex-row">
                 <div onClick={askezaChoice30} className={"flex flex-col w-full rounded-xl m-1 py-16 " + (formData.days == 30 ? ' bg-violet-background text-white' : ' bg-gray-200 text-gray-900') }>
@@ -94,7 +94,7 @@ export function PageDays ({ formData, setFormData }) {
 
 export function Commit ({ formData }) {
     return (
-    <div className='flex flex-col my-auto text-lg mt-[30%] w-full justify-between'>
+    <div className='flex flex-col my-auto text-lg w-full justify-between'>
     <label className="mb-2 mx-auto">Аскеза</label>
     <div className="flex flex-col">
         <p className="mb-2">Я, {formData.name || 'анонимно'}, обещаю {formData.askeza ? "отказаться от курения" : "отказаться от алкоголя"} на срок {formData.days} дней.</p>
@@ -117,17 +117,17 @@ export function InfoBlock({step, nextFormStep, prevFormStep, formData, setFormDa
     return (<div className="flex flex-col h-full">
                 {textBase[step]}
                 <div className="flex flex-row w-full">
-                    {step > 0 ? <Link href="" onClick={prevFormStep} className='text-center font-extralight text-xl text-gray-900 bg-gray-200 rounded-xl px-12 py-3'>
+                    {step > 0 ? <Link href="" onClick={prevFormStep} className='w-full text-center font-extralight text-xl text-gray-900 bg-gray-200 rounded-xl mx-1 py-3'>
                             Назад
                     </Link> : <span></span>}
                     {step < 4 ? <Link onClick={nextFormStep}
                             href='' 
-                            className={'w-full text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl py-3 mx-2' }>
+                            className={'w-full text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl py-3 mx-1' }>
                         Далее
                     </Link> : <></>}
                     {step == 4 ? <Link
                         href='' 
-                        className={'w-full text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl py-3 mx-2' }>
+                        className={'w-full text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl py-3 mx-1' }>
                     Подписать
                     </Link> : <></>}
                 </div>
