@@ -9,14 +9,12 @@
   );
 }
 
-/* @supports (-webkit-touch-callout: none) {
+@supports (-webkit-touch-callout: none) {
 .min-safe-h-screen {
-    height: 100%;
     height: -moz-available;          
     height: -webkit-fill-available;  
-    height: fill-available;
   }
-} */
+}
 
 /* html,
 body {
