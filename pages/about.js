@@ -4,10 +4,11 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
-export function Slider ({step}) { 
+export function Slider ({step, setFormStep}) { 
     return (
         <div className='flex flex-row my-10 justify-between'>
-            {[...Array(4).keys()].map((i, v) => <svg key={i} width={"23%"} height={"10"} className=''>
+            {[...Array(4).keys()].map((i, v) => 
+            <svg onClick={()=> {setFormStep(i)}} key={i} width={"23%"} height={"10"} className=''>
                 <rect width="100%" height="3" className={step == i ? 'fill-blue' : 'fill-white'} />
             </svg>)}
         </div>)
@@ -56,7 +57,7 @@ export default function About() {
 
   return (
     <div className='flex flex-col h-screen mx-7 justify-between'>
-        <Slider step={formStep}/>
+        <Slider step={formStep} setFormStep={setFormStep}/>
         <div className='flex flex-col bg-white rounded-xl p-5 h-2/3 mb-20'>
             <InfoBlock step={formStep} nextFormStep={nextFormStep}/>
         </div>
