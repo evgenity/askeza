@@ -21,7 +21,7 @@ export function InfoBlock({step, nextFormStep}) {
     const Page1 = <p className='my-auto text-lg font-extralight'>
         Исследования журнала New England Journal of Medicine показали, что более половины людей (52%), которые поспорили на деньги, бросили курить как минимум на 6 месяцев.
     </p>
-    const Page2 = <div className='my-auto text-lg font-extralight'>
+    const Page2 = <div className='my-auto font-extralight'>
         Мы предлагаем тебе отложить сумму, которую не захочешь потерять (5000 рублей).
         <ol className="list-decimal list-inside">
             <li>Расскажи друзьям, что хочешь отказаться от вредной привычки, поделившись ссылкой.</li>

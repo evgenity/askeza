@@ -116,7 +116,7 @@ export function InfoBlock({step, nextFormStep, prevFormStep, formData, setFormDa
     }
     return (<div className="flex flex-col h-full">
                 {textBase[step]}
-                <div className="flex flex-row w-full mt-5">
+                <div className="flex flex-row w-full mt-24">
                     {step > 0 ? <Link href="" onClick={prevFormStep} className='w-full text-center font-extralight text-xl text-gray-900 bg-gray-200 rounded-xl mx-1 py-3'>
                             Назад
                     </Link> : <span></span>}
@@ -147,9 +147,9 @@ export default function Create() {
       });
 
   return (
-    <main className='bg-white flex flex-col min-safe-h-screen mx-7 min-h-[75%]'>
+    <main className='bg-white flex flex-col min-safe-h-screen mx-7'>
         <Slider step={formStep} setFormStep={setFormStep}/>
-        <div className='flex flex-col rounded-xl h-full mb-20'>
+        <div className='flex flex-col rounded-xl my-auto'>
             <InfoBlock step={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} formData={formData} setFormData={setFormData}/>
         </div>
     </main>

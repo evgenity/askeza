@@ -12,7 +12,8 @@
 @supports (-webkit-touch-callout: none) {
 .min-safe-h-screen {
     height: -moz-available;          
-    height: -webkit-fill-available;  
+    height: -webkit-fill-available; 
+    max-height: 50vh;
   }
 }
 
