@@ -147,12 +147,12 @@ export default function Create() {
       });
 
   return (
-    <div className='bg-white flex flex-col min-safe-h-screen h-full mx-7'>
+    <main className='bg-white flex flex-col min-safe-h-screen mx-7'>
         <Slider step={formStep} setFormStep={setFormStep}/>
         <div className='flex flex-col rounded-xl h-full mb-20'>
             <InfoBlock step={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} formData={formData} setFormData={setFormData}/>
         </div>
-    </div>
+    </main>
     
   )
 }
