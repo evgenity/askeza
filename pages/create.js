@@ -97,9 +97,9 @@ export function Commit ({ formData }) {
     <div className='flex flex-col my-auto text-lg w-full justify-between'>
     <label className="mb-2 mx-auto">Аскеза</label>
     <div className="flex flex-col">
-        <p className="mb-2">Я, {formData.name || 'анонимно'}, обещаю {formData.askeza ? "отказаться от курения" : "отказаться от алкоголя"} на срок {formData.days} дней.</p>
-        <p className="mb-2">В случае нарушения обещания обязуюсь перевести 5000 рублей на благотворительность.</p>
-        <p className="mb-2">Если же мне удастся продержаться данный период и не прибегнуть к вредной привычке, то это положит начало моего здорового образа жизни.</p>
+        <p className="mb-2 font-extralight">Я, {formData.name || 'анонимно'}, обещаю {formData.askeza ? "отказаться от курения" : "отказаться от алкоголя"} на срок {formData.days} дней.</p>
+        <p className="mb-2 font-extralight">В случае нарушения обещания обязуюсь перевести 5000 рублей на благотворительность.</p>
+        <p className="mb-2 font-extralight">Если же мне удастся продержаться данный период и не прибегнуть к вредной привычке, то это положит начало моего здорового образа жизни.</p>
     </div>
 </div>)
 }
