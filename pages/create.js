@@ -116,7 +116,7 @@ export function InfoBlock({step, nextFormStep, prevFormStep, formData, setFormDa
     }
     return (<div className="flex flex-col h-full">
                 {textBase[step]}
-                <div className="flex flex-row w-full">
+                <div className="flex flex-row w-full mt-5">
                     {step > 0 ? <Link href="" onClick={prevFormStep} className='w-full text-center font-extralight text-xl text-gray-900 bg-gray-200 rounded-xl mx-1 py-3'>
                             Назад
                     </Link> : <span></span>}
