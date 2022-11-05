@@ -56,7 +56,7 @@ export default function About() {
     const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 
   return (
-    <div className='flex flex-col h-screen mx-7 justify-between'>
+    <div className='flex flex-col min-safe-h-screen mx-7 justify-between'>
         <Slider step={formStep} setFormStep={setFormStep}/>
         <div className='flex flex-col bg-white rounded-xl p-5 h-2/3 mb-20'>
             <InfoBlock step={formStep} nextFormStep={nextFormStep}/>
