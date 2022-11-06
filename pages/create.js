@@ -20,7 +20,7 @@ export function PageName ({ formData, setFormData }) {
         name: e.target.value,
       });
     return (
-         <div className='flex flex-col my-auto text-lg'>
+         <div className='flex flex-col mt-3 text-lg'>
             <label className="mb-2">Имя</label>
             <input className="py-2 border-b border-gray-500 text-xl" onChange={handlechange} value={formData.name}></input>
         </div>
@@ -33,7 +33,7 @@ export function PageEmail ({ formData, setFormData }) {
         email: e.target.value,
       });
     return (
-         <div className='flex flex-col my-auto text-lg '>
+         <div className='flex flex-col mt-3 text-lg '>
             <label className="mb-2">Электронная почта</label>
             <input className="py-2 border-b border-gray-500 text-xl" onChange={handlechange} value={formData.email}></input>
         </div>
@@ -50,7 +50,7 @@ export function PageAskeza ({ formData, setFormData }) {
         askeza: false,
       })}
     return (
-         <div className='flex flex-col my-auto text-lg w-full justify-between'>
+         <div className='flex flex-col mt-3 text-lg w-full justify-between'>
             <label className="mb-2">Хочу отказаться от</label>
             <div className="flex flex-row">
                 <div onClick={askezaChoiceSmoke} className={"flex flex-col w-full rounded-xl m-1 py-16 " + (formData.askeza ? ' bg-violet-background text-white' : ' bg-gray-200 text-gray-900') }>
@@ -76,7 +76,7 @@ export function PageDays ({ formData, setFormData }) {
         days: 100,
       })}
     return (
-         <div className='flex flex-col my-auto text-lg w-full justify-between'>
+         <div className='flex flex-col mt-3 text-lg w-full justify-between'>
             <label className="mb-2">На сколько дней?</label>
             <div className="flex flex-row">
                 <div onClick={askezaChoice30} className={"flex flex-col w-full rounded-xl m-1 py-16 " + (formData.days == 30 ? ' bg-violet-background text-white' : ' bg-gray-200 text-gray-900') }>
@@ -94,7 +94,7 @@ export function PageDays ({ formData, setFormData }) {
 
 export function Commit ({ formData }) {
     return (
-    <div className='flex flex-col my-auto text-lg w-full justify-between'>
+    <div className='flex flex-col mt-3 text-lg w-full justify-between'>
     <label className="mb-2 mx-auto">Аскеза</label>
     <div className="flex flex-col">
         <p className="mb-2 font-extralight">Я, {formData.name || 'анонимно'}, обещаю {formData.askeza ? "отказаться от курения" : "отказаться от алкоголя"} на срок {formData.days} дней.</p>
@@ -114,7 +114,7 @@ export function InfoBlock({step, nextFormStep, prevFormStep, formData, setFormDa
         3: <PageDays formData={formData} setFormData={setFormData}/>,
         4: <Commit formData={formData}/>
     }
-    return (<div className="flex flex-col h-full">
+    return (<div className="flex flex-col h-full justify-between">
                 {textBase[step]}
                 <div className="flex flex-row w-full mt-24">
                     {step > 0 ? <Link href="" onClick={prevFormStep} className='w-full text-center font-extralight text-xl text-gray-900 bg-gray-200 rounded-xl mx-1 py-3'>
@@ -149,7 +149,7 @@ export default function Create() {
   return (
     <main className='bg-white flex flex-col min-safe-h-screen mx-7'>
         <Slider step={formStep} setFormStep={setFormStep}/>
-        <div className='flex flex-col rounded-xl my-auto'>
+        <div className='flex flex-col rounded-xl h-[75%]'>
             <InfoBlock step={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} formData={formData} setFormData={setFormData}/>
         </div>
     </main>
