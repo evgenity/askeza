@@ -126,7 +126,7 @@ export function InfoBlock({step, nextFormStep, prevFormStep, formData, setFormDa
                         Далее
                     </Link> : <></> }
                     {step == 4 ? <Link
-                        href='' 
+                        href='/profile' 
                         className={'w-full text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl py-3 mx-1' }>
                     Подписать
                     </Link> : <></>}
