@@ -20,7 +20,7 @@ export function PageName ({ formData, setFormData }) {
         name: e.target.value,
       });
     return (
-         <div className='flex flex-col mt-3 text-lg'>
+         <div className='flex flex-col mt-3 text-lg w-full justify-between'>
             <label className="mb-2">Имя</label>
             <input className="py-2 border-b border-gray-500 text-xl" onChange={handlechange} value={formData.name}></input>
         </div>
@@ -33,7 +33,7 @@ export function PageEmail ({ formData, setFormData }) {
         email: e.target.value,
       });
     return (
-         <div className='flex flex-col mt-3 text-lg '>
+         <div className='flex flex-col mt-3 text-lg w-full justify-between'>
             <label className="mb-2">Электронная почта</label>
             <input className="py-2 border-b border-gray-500 text-xl" onChange={handlechange} value={formData.email}></input>
         </div>
