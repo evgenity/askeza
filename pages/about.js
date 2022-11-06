@@ -44,7 +44,7 @@ export function InfoBlock({step, nextFormStep}) {
                 <Link onClick={nextFormStep} href='#' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4 mt-4'>
                     Далее
                 </Link> :
-                <Link href='/create' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4'>
+                <Link href='/create' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4 mt-4'>
                     Создать аскезу
                 </Link>
                 }
