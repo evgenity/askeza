@@ -2,18 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%;
+}
+
 .min-safe-h-screen {
   /* equivalent to 100dvh in major browsers */
-  height: calc(
+  min-height: calc(
     100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
   );
 }
 
 @supports (-webkit-touch-callout: none) {
 .min-safe-h-screen {
-    /* height: -moz-available;          
-    height: -webkit-fill-available;  */
-    min-height: 50vh;
+    min-height: -moz-available;          
+    min-height: -webkit-fill-available; 
   }
 }
 

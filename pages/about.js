@@ -21,7 +21,7 @@ export function InfoBlock({step, nextFormStep}) {
     const Page1 = <p className='my-auto text-lg font-extralight'>
         Исследования журнала New England Journal of Medicine показали, что более половины людей (52%), которые поспорили на деньги, бросили курить как минимум на 6 месяцев.
     </p>
-    const Page2 = <div className='my-auto font-extralight'>
+    const Page2 = <div className='my-auto text-lg font-extralight'>
         Мы предлагаем тебе отложить сумму, которую не захочешь потерять (5000 рублей).
         <ol className="list-decimal list-inside">
             <li>Расскажи друзьям, что хочешь отказаться от вредной привычки, поделившись ссылкой.</li>
@@ -39,9 +39,9 @@ export function InfoBlock({step, nextFormStep}) {
         3: Page3,
     }
     return (<div className="flex flex-col h-full">
-                {textBase[step]}
-                {step < 3 ? 
-                <Link onClick={nextFormStep} href='#' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4'>
+                { textBase[step] }
+                { step < 3 ? 
+                <Link onClick={nextFormStep} href='#' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4 mt-4'>
                     Далее
                 </Link> :
                 <Link href='/create' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4'>
@@ -56,10 +56,10 @@ export default function About() {
     const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 
   return (
-    <main  className='bg-black-background'>
-        <div className='flex flex-col min-safe-h-screen mx-7 justify-between'>
+    <main  className='bg-black-background min-safe-h-screen'>
+        <div className='flex flex-col mx-7 h-full justify-between'>
             <Slider step={formStep} setFormStep={setFormStep}/>
-            <div className='flex flex-col bg-white rounded-xl h-2/3 p-5 mb-20'>
+            <div className='flex flex-col bg-white rounded-xl h-full p-5 mb-20'>
                 <InfoBlock step={formStep} nextFormStep={nextFormStep}/>
             </div>
         </div>
