@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main className="bg-black-background flex flex-col min-safe-h-screen overflow-auto justify-between">
         <div className='my-auto'>
-          <Image className="mx-auto" src="/assets/img/logo_text-grad-black.svg" alt="Vercel Logo" width={260} height={52} />
+          <Image className="mx-auto" src="/assets/img/logo_text-grad-black.svg" alt="Vercel Logo" width={260} height={52} priority={true}/>
           <h1 className='block text-gray-100 w-64 text-xl text-center mx-auto font-raleway mt-5 font-extralight tracking-wide'>Новый способ отказаться от вредных привычек</h1>
         </div>
         <div className='mb-20'>
