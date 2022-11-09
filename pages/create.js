@@ -147,9 +147,9 @@ export default function Create() {
       });
 
   return (
-    <main className='bg-white flex flex-col min-safe-h-screen mx-7'>
+    <main className='bg-white flex flex-col min-safe-h-screen mx-7 h-px justify-between'>
         <Slider step={formStep} setFormStep={setFormStep}/>
-        <div className='flex flex-col rounded-xl h-[75%]'>
+        <div className='flex flex-col rounded-xl h-4/6'>
             <InfoBlock step={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} formData={formData} setFormData={setFormData}/>
         </div>
     </main>
