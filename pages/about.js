@@ -40,29 +40,33 @@ const ABOUT_TEXT = [
 
 export function InfoBlock({step, nextFormStep}) {
     
-    const textBase = ABOUT_TEXT.map((v,i) => <>
-        <p key={i} className="mx-auto text-6xl my-6 text-blue">{v.icon}</p>
-        <p className='text-lg font-extralight'>
-            {v.text}
-        </p>
-    </>)
+    const textBase = ABOUT_TEXT.map((v,i) => 
+        <div key={i} className="flex flex-col">
+            <p className="mx-auto text-6xl my-6 text-blue">{v.icon}</p>
+            <p className='text-lg font-extralight'>
+                {v.text}
+            </p>
+        </div >
+        )
 
-    return (<div className="flex flex-col h-full justify-between">
-                { textBase[step] }
-                { step < textBase.length - 1 ? 
+    return (
+        <div className='flex flex-col bg-white rounded-xl min-h-[75%] p-5 mb-5 justify-between'>
+            { textBase[step] }
+            { step < textBase.length - 1 ? 
                 <Link onClick={nextFormStep} href='#' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4 mt-4'>
                     Далее
                 </Link> :
-                <>
+                <div className="flex flex-col">
                     <Link href='/create' className='text-center font-extralight text-xl text-gray-100 bg-violet-background rounded-xl px-16 py-4 mt-4'>
                         Создать аскезу
                     </Link>
-                    <Link href='/' className="font-extralight block lowercase mx-auto text-xl text-blue">
+                    <Link href='/' className="font-extralight block lowercase mx-auto text-xl text-blue my-3">
                         вернуться на главную
                     </Link>
-                </>
-                }
-            </div>)
+                </div>
+            }
+        </div>
+        )
 }
 
 export default function About() {
@@ -70,13 +74,9 @@ export default function About() {
     const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
 
   return (
-    <main  className='bg-black-background min-safe-h-screen h-px'>
-        <div className='flex flex-col mx-7 h-full justify-between'>
-            <Slider stepsTotal={ABOUT_TEXT.length} step={formStep} setFormStep={setFormStep}/>
-            <div className='flex flex-col bg-white rounded-xl h-4/6 p-5 mb-20'>
-                <InfoBlock step={formStep} nextFormStep={nextFormStep}/>
-            </div>
-        </div>
+    <main  className='bg-black-background min-safe-h-screen h-px flex flex-col mx-7 justify-between'>
+        <Slider stepsTotal={ABOUT_TEXT.length} step={formStep} setFormStep={setFormStep}/>
+        <InfoBlock step={formStep} nextFormStep={nextFormStep}/>
     </main>
     
   )
